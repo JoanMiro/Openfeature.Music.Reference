@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ChordFactoryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Chords" type="Chords" />
+        <xs:element name="Intervals" type="Intervals" />
+        <xs:element name="NoteNames" type="NoteNames" />
+        <xs:element name="Scales" type="Scales" />
+        <xs:element name="Semitones" type="Semitones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Chords">
+    <xs:sequence>
+      <xs:element name="Chord" minOccurs="1" maxOccurs="unbounded" type="NoteSequence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NoteNames">
+    <xs:sequence>
+      <xs:element name="NoteName" minOccurs="1" maxOccurs="unbounded" type="NoteName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Scales">
+    <xs:sequence>
+      <xs:element name="Scale" minOccurs="1" maxOccurs="unbounded" type="NoteSequence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Intervals">
+    <xs:sequence>
+      <xs:element name="Interval" minOccurs="1" maxOccurs="unbounded" type="Interval" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Semitones">
+    <xs:sequence>
+      <xs:element name="Semitone" minOccurs="1" maxOccurs="unbounded" type="Semitone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NoteSequence">
+    <xs:sequence>
+      <xs:element name="SequenceType" type="SequenceType" maxOccurs="1" minOccurs="1" />
+      <xs:element name="Description" type="xs:string" maxOccurs="1" minOccurs="1" />
+      <xs:element name="NoteList" type="NoteList" maxOccurs="1" minOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NoteList">
+    <xs:sequence>
+      <xs:element name="NoteIndex" type="xs:int" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Interval">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" maxOccurs="1" minOccurs="1" />
+      <xs:element name="Abbreviation" type="xs:string" maxOccurs="1" minOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Semitone">
+    <xs:sequence>
+      <xs:element name="Accidental" type="AccidentalType" maxOccurs="1" minOccurs="1" />
+      <xs:element name="MidiValue" type="xs:int" maxOccurs="1" minOccurs="1" />
+      <xs:element name="FullName" type="xs:string" maxOccurs="1" minOccurs="1" />
+      <xs:element name="NoteName" type="NoteName" maxOccurs="1" minOccurs="1" />
+      <xs:element name="Octave" type="xs:int" maxOccurs="1" minOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AccidentalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Flat" />
+      <xs:enumeration value="Natural" />
+      <xs:enumeration value="Sharp" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SequenceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Chord" />
+      <xs:enumeration value="Scale" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NoteName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="C" />
+      <xs:enumeration value="C#" />
+      <xs:enumeration value="D" />
+      <xs:enumeration value="Eb" />
+      <xs:enumeration value="E" />
+      <xs:enumeration value="F" />
+      <xs:enumeration value="F#" />
+      <xs:enumeration value="G" />
+      <xs:enumeration value="G#" />
+      <xs:enumeration value="A" />
+      <xs:enumeration value="Bb" />
+      <xs:enumeration value="B" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

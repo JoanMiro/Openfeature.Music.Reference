@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Openfeature.Music.Reference</name>
+    </assembly>
+    <members>
+        <member name="T:Openfeature.Music.Reference.Controllers.ChordDataController">
+            <summary>
+            Controller class for all chord and scale data
+            </summary>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.#ctor(Openfeature.Music.Reference.Models.IChordData,Microsoft.Extensions.Logging.ILogger{Openfeature.Music.Reference.Controllers.ChordDataController})">
+            <summary>
+            Contr all chord and scale data
+            </summary>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.ChordData">
+            <summary>
+            Retrieves all chord and scale data
+            </summary>
+            <returns>JSON structure</returns>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.Chords">
+            <summary>
+            Retrieves all chord data
+            </summary>
+            <returns>List of chords</returns>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.Chords(System.String)">
+            <summary>
+            Retrieves all chord data matching the  search term(s)
+            </summary>
+            <param name="searchTerm">Text to search for in chord descriptions e.g. maj, sus etc.</param>
+            <returns>List of chords</returns>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.ChordNotes(System.String)">
+            <summary>
+            Retrieves all chords (with note values) for the specified root
+            </summary>
+            <param name="root">Root note value for chord e.g. C, f#, Ab etc.</param>
+            <returns>List of chords</returns>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.ChordNotes(System.String,System.String)">
+            <summary>
+            Retrieves all chords (with note values) that matching the search term(s) for the specified root
+            </summary>
+            <param name="root">Root note value for chord e.g. C, f#, Ab etc.</param>
+            <param name="searchTerm">Text to search for in chord descriptions e.g. maj, sus etc.</param>
+            <returns>List of chords</returns>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.Scales">
+            <summary>
+            Retrieves all scale data
+            </summary>
+            <returns>List of scales</returns>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.Scales(System.String)">
+            <summary>
+            Retrieves all chord data matching the  search term(s)
+            </summary>
+            <param name="searchTerm">Text to search for in scale descriptions e.g. mixolydian, phrygian etc.</param>
+            <returns>List of chords</returns>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.ScaleNotes(System.String)">
+            <summary>
+            Retrieves all scales (with note values) for the specified root
+            </summary>
+            <param name="root">Root note value for scale e.g. C, f#, Ab etc.</param>
+            <returns>List of scales</returns>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.ScaleNotes(System.String,System.String)">
+            <summary>
+            Retrieves all scales (with note values) that matching the search term(s) for the specified root
+            </summary>
+            <param name="root">Root note value for scale e.g. C, f#, Ab etc.</param>
+            <param name="searchTerm">Text to search for in scale descriptions e.g. mixolydian, phrygian etc.</param>
+            <returns>List of scales</returns>
+        </member>
+        <member name="T:Openfeature.Music.Reference.Models.ChordData">
+            <summary>
+            Openfeature Chord Data
+            </summary>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Models.ChordData.#ctor">
+            <summary>
+            Chord Data Constructor
+            </summary>
+        </member>
+        <member name="T:Openfeature.Music.Reference.Program">
+            <summary>
+            Program class
+            </summary>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Program.Main(System.String[])">
+            <summary>
+            Entry point
+            </summary>
+            <param name="args">Startup Args</param>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Builder method
+            </summary>
+            <param name="args">Arguments</param>
+            <returns>Builder instance</returns>
+        </member>
+        <member name="T:Openfeature.Music.Reference.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup 
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Openfeature.Music.Reference.Startup.Configuration">
+            <summary>
+            Config for application
+            </summary>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Openfeature.Music.Reference.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
