@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="Data\ChordData.xml" />
+    <None Remove="Openfeature.Music.Reference.xml" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\ChordData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Openfeature.Music.Reference.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
