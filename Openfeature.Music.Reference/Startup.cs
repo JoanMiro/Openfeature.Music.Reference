@@ -5,11 +5,11 @@
     using System.Reflection;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.OpenApi.Models;
     using Models;
+    using static Microsoft.AspNetCore.Mvc.CompatibilityVersion;
 
     /// <summary>
     /// Startup class
@@ -37,28 +37,34 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IChordData, ChordData>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSwaggerGen(
-                options =>
-                {
-                    options.SwaggerDoc(
-                        "v1", new OpenApiInfo
-                        {
-                            Version = "v1",
-                            Title = "Openfeature Chord Data API",
-                            Description = "A musical chord and scale reference API",
-                            Contact = new OpenApiContact
-                            {
-                                Name = "Gordon Mackie",
-                                Email = "gmm@msn.com",
-                                Url = new Uri("https://www.openfeature.com"),
-                            }
-                        });
+            services.AddMvc(options =>
+            {
+                options.EnableEndpointRouting = false;
+            })
+            .SetCompatibilityVersion(Version_3_0);
 
-                    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                    options.IncludeXmlComments(xmlPath);
-                });
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc(
+                    "v1",
+                    new OpenApiInfo
+                    {
+                        Version = "v1",
+                        Title = "Openfeature Chord Data API",
+                        Description = "A musical chord and scale reference API",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Gordon Mackie",
+                            Email = "gmm@msn.com",
+                            Url = new Uri("https://www.openfeature.com"),
+                        }
+                    }
+                );
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
+            });
         }
 
         /// <summary>
