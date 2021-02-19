@@ -17,7 +17,7 @@
         private readonly ILogger<ChordDataController> logger;
 
         /// <summary>
-        /// Contr all chord and scale data
+        /// Retrieves all chord and scale data
         /// </summary>
         public ChordDataController(IChordData chordData, ILogger<ChordDataController> logger)
         {
