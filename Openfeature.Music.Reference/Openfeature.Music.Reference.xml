@@ -11,7 +11,7 @@
         </member>
         <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.#ctor(Openfeature.Music.Reference.Models.IChordData,Microsoft.Extensions.Logging.ILogger{Openfeature.Music.Reference.Controllers.ChordDataController})">
             <summary>
-            Contr all chord and scale data
+            Retrieves all chord and scale data
             </summary>
         </member>
         <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.ChordData">
