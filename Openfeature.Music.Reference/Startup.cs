@@ -3,6 +3,7 @@
     using System;
     using System.IO;
     using System.Reflection;
+    using Hellang.Middleware.ProblemDetails;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
@@ -43,6 +44,8 @@
             })
             .SetCompatibilityVersion(Version_3_0);
 
+            services.AddProblemDetails();
+
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc(
@@ -74,6 +77,7 @@
         /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseProblemDetails();
             app.UseSwagger();
             app.UseSwaggerUI(
                 c =>

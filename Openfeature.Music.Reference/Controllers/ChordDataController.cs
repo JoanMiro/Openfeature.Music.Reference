@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// Retrieves all chord data matching the  search term(s)
+        /// Retrieves all chord data matching the search term(s)
         /// </summary>
         /// <param name="searchTerm">Text to search for in chord descriptions e.g. maj, sus etc.</param>
         /// <returns>List of chords</returns>
@@ -107,7 +107,7 @@
         }
 
         /// <summary>
-        /// Retrieves all chord data matching the  search term(s)
+        /// Retrieves all chord data matching the search term(s)
         /// </summary>
         /// <param name="searchTerm">Text to search for in scale descriptions e.g. mixolydian, phrygian etc.</param>
         /// <returns>List of chords</returns>
