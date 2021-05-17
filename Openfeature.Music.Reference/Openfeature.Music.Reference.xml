@@ -28,7 +28,7 @@
         </member>
         <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.Chords(System.String)">
             <summary>
-            Retrieves all chord data matching the  search term(s)
+            Retrieves all chord data matching the search term(s)
             </summary>
             <param name="searchTerm">Text to search for in chord descriptions e.g. maj, sus etc.</param>
             <returns>List of chords</returns>
@@ -56,7 +56,7 @@
         </member>
         <member name="M:Openfeature.Music.Reference.Controllers.ChordDataController.Scales(System.String)">
             <summary>
-            Retrieves all chord data matching the  search term(s)
+            Retrieves all chord data matching the search term(s)
             </summary>
             <param name="searchTerm">Text to search for in scale descriptions e.g. mixolydian, phrygian etc.</param>
             <returns>List of chords</returns>
@@ -126,7 +126,7 @@
             </summary>
             <param name="services"></param>
         </member>
-        <member name="M:Openfeature.Music.Reference.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+        <member name="M:Openfeature.Music.Reference.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             <summary>
             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>
